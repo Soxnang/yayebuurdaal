@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- 🔐 DevSecOps : Meta tags sécurité & SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YayeBuurDaal - Chaussures premium homme et femme. Élégance, qualité et durabilité. Commandez via WhatsApp.">
+  <meta name="keywords" content="chaussures, luxe, Sénégal, mode, homme, femme, premium">
+  <meta name="author" content="YayeBuurDaal">
+  <meta name="robots" content="index, follow">
+  
+  <!-- 🔐 Security Headers (à configurer côté serveur/CDN) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  
+  <!-- 🎨 Open Graph / Social -->
+  <meta property="og:title" content="YayeBuurDaal - L'énergie du style">
+  <meta property="og:description" content="Chaussures premium qui imposent le respect.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yayebuurdaal.com">
+  <meta property="og:image" content="https://yayebuurdaal.com/assets/images/og-image.jpg">
+  
+  <!-- 🎨 Favicon -->
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
+  
+  <!-- 🎨 Fonts Premium (Google Fonts - chargement sécurisé) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- 🎨 CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <title>YayeBuurDaal | Chaussures Premium Homme & Femme</title>
+</head>
+<body>
+  <!-- 🔐 Skip link pour accessibilité -->
+  <a href="#main-content" class="sr-only">Aller au contenu principal</a>
+
+  <!-- 🎨 Header -->
+  <header class="header" role="banner">
+    <a href="/" class="logo" aria-label="YayeBuurDaal - Accueil">
+      <img src="/assets/images/logo.png" alt="Logo YayeBuurDaal" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span style="display:none">YBD</span>
+    </a>
+    <nav class="nav" role="navigation" aria-label="Menu principal">
+      <!-- Menu mobile-first simplifié pour démo -->
+    </nav>
+  </header>
+
+  <!-- 🎨 Main Content -->
+  <main id="main-content" role="main">
+    
+    <!-- 🏠 Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">YayeBuurDaal</h1>
+      <p class="hero-slogan">"L'énergie du style, la finition en détail"</p>
+      <p class="hero-tagline">Des chaussures qui imposent le respect.</p>
+      
+      <!-- 🔐 Bouton WhatsApp sécurisé -->
+      <a href="#" 
+         class="btn btn-whatsapp" 
+         data-whatsapp 
+         data-source="hero"
+         aria-label="Commander sur WhatsApp"
+         rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004c-1.775.004-3.548-.444-5.134-1.286l-.228-.124-2.375.625.634-2.318-.149-.238c-1.04-1.657-1.595-3.59-1.595-5.583C3.202 5.22 7.698.725 13.248.725c2.683 0 5.204 1.046 7.098 2.94 1.894 1.894 2.94 4.415 2.94 7.098-.003 5.55-4.5 10.046-10.05 10.046m6.403-14.38c-1.66-1.66-3.868-2.578-6.218-2.578-4.823 0-8.747 3.924-8.747 8.747 0 1.657.463 3.27 1.337 4.667l.15.238-.634 2.318 2.375-.625.228.124c1.387.824 2.98 1.26 4.598 1.26h.004c4.823 0 8.747-3.924 8.747-8.747.001-2.35-.918-4.558-2.578-6.218"/>
+        </svg>
+        Commander sur WhatsApp
+      </a>
+    </section>
+
+    <!-- ℹ️ À Propos -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">À Propos</h2>
+        <div class="about-content animate-on-scroll">
+          <p><strong>YayeBuurDaal</strong> incarne l'excellence de la chaussure africaine moderne. Notre vision : allier <em>qualité artisanale</em>, <em>élégance intemporelle</em> et <em>durabilité</em>.</p>
+          <p>Chaque paire est conçue avec des matériaux premium et un savoir-faire minutieux pour vous offrir un confort exceptionnel et un style qui impose le respect.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 👟 Produits -->
+    <section class="section" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <h2 id="products-title">Nos Collections</h2>
+        
+        <div class="products-grid">
+          <!-- Produit Homme -->
+          <article class="product-card animate-on-scroll" aria-labelledby="prod-homme-title">
+            <div class="product-image" role="img" aria-label="Chaussure homme premium">👞</div>
+            <div class="product-info">
+              <h3 id="prod-homme-title" class="product-title">Collection Homme</h3>
+              <p class="product-desc">Élégance et confort pour l'homme moderne.</p>
+              <p class="product-price">À partir de 45 000 FCFA</p>
+              <a href="#" class="btn btn-sm" data-whatsapp data-source="product-homme">Personnaliser</a>
+            </div>
+          </article>
+          
+          <!-- Produit Femme -->
+          <article class="product-card animate-on-scroll" aria-labelledby="prod-femme-title">
+            <div class="product-image" role="img" aria-label="Chaussure femme premium">👠</div>
+            <div class="product-info">
+              <h3 id="prod-femme-title" class="product-title">Collection Femme</h3>
+              <p class="product-desc">Style affirmé et finition d'exception.</p>
+              <p class="product-price">À partir de 50 000 FCFA</p>
+              <a href="#" class="btn btn-sm" data-whatsapp data-source="product-femme">Personnaliser</a>
+            </div>
+          </article>
+          
+          <!-- Produit Custom -->
+          <article class="product-card animate-on-scroll" aria-labelledby="prod-custom-title">
+            <div class="product-image" role="img" aria-label="Chaussure personnalisée">✨</div>
+            <div class="product-info">
+              <h3 id="prod-custom-title" class="product-title">Sur Mesure</h3>
+              <p class="product-desc">Créez votre paire unique avec nos artisans.</p>
+              <p class="product-price">Devis personnalisé</p>
+              <a href="#" class="btn btn-sm" data-whatsapp data-source="product-custom">Demander un devis</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🖼️ Galerie -->
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title">Galerie</h2>
+        <div class="gallery-grid">
+          <!-- Placeholders - à remplacer par vraies images -->
+          <figure class="gallery-item animate-on-scroll">
+            <div class="gallery-placeholder">📸 Photo 1</div>
+            <figcaption>Modèle Dakar Noir</figcaption>
+          </figure>
+          <figure class="gallery-item animate-on-scroll">
+            <div class="gallery-placeholder">📸 Photo 2</div>
+            <figcaption>Édition Limitée Or</figcaption>
+          </figure>
+          <figure class="gallery-item animate-on-scroll">
+            <div class="gallery-placeholder">📸 Photo 3</div>
+            <figcaption>Collection Été</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💬 Témoignages -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <h2 id="testimonials-title">Ils nous font confiance</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial animate-on-scroll">
+            <p>"Qualité exceptionnelle et service impeccable. Mes chaussures YayeBuurDaal sont devenues mes préférées !"</p>
+            <footer>— Aïda D., Dakar</footer>
+          </blockquote>
+          <blockquote class="testimonial animate-on-scroll">
+            <p>"Commande via WhatsApp super fluide. Livraison rapide et emballage premium. Je recommande !"</p>
+            <footer>— Moussa K., Thiès</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔢 Compteur Animé -->
+    <section class="section counter-section" aria-labelledby="counter-title">
+      <div class="container">
+        <h2 id="counter-title" class="sr-only">Statistiques</h2>
+        <div class="counter-grid">
+          <div class="counter-item">
+            <span class="counter-value" data-target="150">0</span>
+            <span class="counter-label">Commandes réalisées</span>
+          </div>
+          <div class="counter-item">
+            <span class="counter-value" data-target="98">0</span>
+            <span class="counter-label">% Clients satisfaits</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📞 Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Nous Contacter</h2>
+        <div class="contact-links">
+          <a href="#" class="contact-link" data-whatsapp data-source="contact">
+            <span class="contact-icon">💬</span>
+            <span>WhatsApp</span>
+          </a>
+          <a href="tel:+221771234567" class="contact-link">
+            <span class="contact-icon">📞</span>
+            <span>+221 77 123 45 67</span>
+          </a>
+          <a href="mailto:contact@yayebuurdaal.com" class="contact-link">
+            <span class="contact-icon">✉️</span>
+            <span>contact@yayebuurdaal.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🎨 Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; <span id="year"></span> YayeBuurDaal. Tous droits réservés.</p>
+      <nav class="footer-links" aria-label="Liens secondaires">
+        <a href="#about">À propos</a>
+        <a href="#products">Collections</a>
+        <a href="#contact">Contact</a>
+        <a href="/SECURITY.md" target="_blank">Sécurité</a>
+      </nav>
+      <p class="footer-disclaimer">Site vitrine - Commandes via WhatsApp uniquement</p>
+    </div>
+  </footer>
+
+  <!-- 💬 Bouton WhatsApp Flottant -->
+  <a href="#" 
+     class="whatsapp-float" 
+     data-whatsapp 
+     data-source="floating"
+     aria-label="Contacter sur WhatsApp"
+     rel="noopener noreferrer"
+     title="Commander sur WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004c-1.775.004-3.548-.444-5.134-1.286l-.228-.124-2.375.625.634-2.318-.149-.238c-1.04-1.657-1.595-3.59-1.595-5.583C3.202 5.22 7.698.725 13.248.725c2.683 0 5.204 1.046 7.098 2.94 1.894 1.894 2.94 4.415 2.94 7.098-.003 5.55-4.5 10.046-10.05 10.046m6.403-14.38c-1.66-1.66-3.868-2.578-6.218-2.578-4.823 0-8.747 3.924-8.747 8.747 0 1.657.463 3.27 1.337 4.667l.15.238-.634 2.318 2.375-.625.228.124c1.387.824 2.98 1.26 4.598 1.26h.004c4.823 0 8.747-3.924 8.747-8.747.001-2.35-.918-4.558-2.578-6.218"/>
+    </svg>
+  </a>
+
+  <!-- 🔐 Scripts - Chargement différé pour performance -->
+  <script src="/js/security.js" defer></script>
+  <script src="/js/analytics.js" defer></script>
+  <script src="/js/main.js" defer></script>
+  
+  <!-- 🔐 Script inline sécurisé pour année dynamique -->
+  <script>
+    // Année dynamique dans le footer - sécurisé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

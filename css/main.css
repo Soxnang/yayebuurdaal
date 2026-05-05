@@ -1,0 +1,300 @@
+/**
+ * 🎨 Main CSS - YayeBuurDaal
+ * Structure BEM, Mobile-First, Accessibilité
+ * DevSecOps : Commentaires pédagogiques, code maintenable
+ */
+
+@import 'variables.css';
+@import 'animations.css';
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typographie Premium */
+h1, h2, h3, h4 {
+  font-family: var(--font-primary);
+  color: var(--color-gold);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Header & Navigation */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gold-dark);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-metallic) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin-bottom: var(--spacing-sm);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-slogan {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+}
+
+/* Boutons Premium */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.8rem 2rem;
+  background: var(--color-gold);
+  color: var(--color-black);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: var(--font-secondary);
+  transition: all var(--transition-normal);
+  border: 2px solid var(--color-gold);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  border-color: #25D366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background: transparent;
+  color: #25D366;
+}
+
+/* Produits Grid Responsive */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--color-gray-metallic);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.product-card:hover {
+  border-color: var(--color-gold);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: var(--color-black-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-size: 3rem;
+}
+
+.product-info {
+  padding: var(--spacing-sm);
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-white);
+}
+
+.product-price {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* Bouton WhatsApp Flottant */
+.whatsapp-float {
+  position: fixed;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-normal);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+/* Footer */
+.footer {
+  background: var(--color-black-light);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  border-top: 1px solid var(--color-gold-dark);
+  margin-top: var(--spacing-xl);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--color-gray-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+}
+
+/* Accessibilité & Focus */
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .hero {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+}
+
+/* 🛡️ DevSecOps : Classes utilitaires pour sécurité */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[data-sanitized] {
+  /* Indicateur visuel pour éléments sanitizés (dev only) */
+}
