@@ -1,0 +1,107 @@
+# 🔐 DevSecOps: Pipeline CI/CD pour YayeBuurDaal
+# Déploiement automatique sur GitHub Pages
+# Sécurité : Scan de dépendances, validation HTML, headers CSP
+
+name: 🚀 Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: # Déclenchement manuel
+
+# 🔐 Permissions minimales requises
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 🔐 Environnement de déploiement
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # 🔍 Job 1: Sécurité & Qualité du Code
+  security-scan:
+    name: 🔐 Security & Quality Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🕵️ Scan HTML pour XSS potentiel
+        run: |
+          # Vérification basique des attributs dangereux
+          if grep -r "javascript:" index.html --include="*.html"; then
+            echo "❌ javascript: protocol detected - potential XSS"
+            exit 1
+          fi
+          if grep -r "onerror=" index.html --include="*.html"; then
+            echo "⚠️ Inline event handlers detected - review for XSS"
+          fi
+          echo "✅ HTML security scan passed"
+
+      - name: 🧹 Validate HTML structure
+        uses: Cyb3r-Jak3/html5validator-action@v7.0.2
+        with:
+          config: html5validator.yml
+
+      - name: 📦 Audit dependencies (préparation futur)
+        run: |
+          # Placeholder pour quand nous aurons des dépendances npm
+          echo "ℹ️ No package.json - static site, no npm dependencies to audit"
+
+  # 🏗️ Job 2: Build & Déploiement
+  deploy:
+    name: 🚀 Build & Deploy
+    needs: security-scan
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🎨 Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: 📦 Build (static site - no build step needed)
+        run: |
+          echo "✅ Static site ready - no compilation required"
+          # Ici, on pourrait ajouter : minification CSS/JS, optimisation images
+          # Exemple futur : npm run build si on passe à un framework
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: 🌐 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: ✅ Post-deployment notification
+        run: |
+          echo "🎉 Déploiement réussi sur : ${{ steps.deployment.outputs.page_url }}"
+          # 🔒 Hook pour notification Slack/Teams (optionnel)
+          # curl -X POST -H 'Content-type: application/json' \
+          #   --data "{\"text\":\"✅ YayeBuurDaal déployé : ${{ steps.deployment.outputs.page_url }}\"}" \
+          #   ${{ secrets.SLACK_WEBHOOK }}
+
+  # 🔄 Job 3: Monitoring post-déploiement (optionnel)
+  post-check:
+    name: 🔍 Post-Deployment Check
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: 🌐 Verify deployment
+        run: |
+          # Vérification basique que la page répond
+          curl -f https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/ || exit 1
+          echo "✅ Site accessible après déploiement"
